@@ -1,2 +1,2 @@
 # subjuect.py
-subject=['re:Air Chiller Quotation','re:newest Arctic air','Re:newest Arctic Air Intelligent','re:Cool air Intelligent','re:New Cool air Intelligent','re:Air Chiller from China','re:Air Chiller newest']
+subject=['re: Air Chiller Quotation','re: newest Arctic air','Re: newest Arctic Air Intelligent','re: Cool air Intelligent','re: New Cool air Intelligent','re: Air Chiller from China','re: Air Chiller newest']
