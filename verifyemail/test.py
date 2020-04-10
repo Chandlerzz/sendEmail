@@ -1,5 +1,4 @@
-﻿
-import sqlite3
+﻿import sqlite3
 import verifyemail
 import pandas as pd 
 import os
@@ -8,19 +7,19 @@ import schedule
 import sys
 
 num=sys.argv[1]
-
+tableName = sys.argv[2]
 
 conn = sqlite3.connect(r'C:\Users\Administrator\Desktop\sendEmail\test.db')
 cursor = conn.cursor()
 def doCheck(cursor,verifyemail):
 	global num
-	user = cursor.execute("""SELECT * FROM electric WHERE id=?""",(num,))
+	user = cursor.execute("SELECT * FROM "+tableName+" WHERE id=?",(num,))
 	user=user.fetchone()
 	email=user[1]
 	try:
 		istrue=verifyemail.verify_istrue(email)
 		if istrue[email] == True:
-			cursor.execute("""UPDATE electric set istrue=? WHERE id=?""",('1',num,))
+			cursor.execute("UPDATE "+tableName+" set istrue=? WHERE id=?",('1',num,))
 			print("%s is true",email)
 			conn.commit()
 	except:		
